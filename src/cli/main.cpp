@@ -6,7 +6,7 @@ using Aurora::VirtualMachine;
 
 int main()
 {
-    VirtualMachine* vm = VirtualMachine::Create("");
+    VirtualMachine *vm = VirtualMachine::Create("");
 
     vm->Destroy();
 
