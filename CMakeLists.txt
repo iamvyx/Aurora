@@ -10,7 +10,7 @@ option(BUILD_CLI "Build  Aurora Console Runtime Interface" ON)
 add_subdirectory(vendor/luau)
 
 add_library(aurora STATIC
-    
+    src/VirtualMachine.cpp
 )
 
 target_include_directories(aurora PUBLIC
@@ -27,9 +27,13 @@ target_link_libraries(aurora PRIVATE
     luau
 )
 
+target_compile_definitions(aurora PRIVATE
+    $<$<CONFIG:DEBUG>:AURORA_DEBUG>
+)
+
 if(BUILD_CLI)
     add_executable(aurora_cli
-        
+        src/cli/main.cpp
     )
 
     target_include_directories(aurora_cli PRIVATE
