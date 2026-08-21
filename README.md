@@ -1,2 +1,2 @@
 # Aurora
-Aurora is a luau runtime based on and Bun
+Aurora is a luau runtime based NodeJS on and Bun
